@@ -1,0 +1,134 @@
+#signup
+{
+  background-image: url('../../../assets/carpool/Bg1.png'), linear-gradient(orange, orange);
+  height: 100%;
+  padding-top: 100px;
+  font-family: 'Open Sans', sans-serif;
+  background-position: bottom right;
+
+
+}
+
+h2{
+  color:white;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#signup
+{
+  width:100%;
+  display: flex;
+  margin:0 auto;
+  justify-content:center
+}
+
+form
+{
+  width:300px
+}
+/* .form-control {
+  height:50px;
+
+} */
+#pwd,#conformpwd
+{
+  border-radius: 5px 0px 0px 5px;
+  border:none;
+}
+
+button{
+  border: none;
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input
+{
+  border: none;
+}
+
+.icon
+{
+
+
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+#password i,#Conformpassword i
+{
+  color:grey;
+}
+
+#submit
+{
+  color:white;
+  font-weight: bold;
+  border-radius:25px;
+  padding: 5px 30px 5px 30px;
+  display: flex;
+  margin:0 auto;
+  justify-content:center ;
+  margin-top:20px;
+  background-color:rgba(147,25,255,255);
+}
+
+#AllreadyAMember
+{
+  padding-top: 20px;
+  display: flex;
+  display: flex;
+  margin:0 auto;
+  justify-content:center ;
+  color:white;
+
+}
+#AllreadyAMember p
+{
+  padding-right: 10px;
+}
+#AllreadyAMember button
+{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(255, 166, 0, 0);
+}
+
+
+hr {
+
+  height: 2px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: White;
+  margin-top: 0px;
+
+}
+
+#sighupheadding
+{
+  width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+
+}
+#sighupheadding h2
+{
+  margin: 0px;
+  padding: 8px;
+}
+

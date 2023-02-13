@@ -1,0 +1,76 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<div id="signup">
+
+  <div id="form">
+    <div id="sighupheadding">
+      <h2>Sign Up</h2>
+      <hr/>
+    </div>
+    <form>
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Enter email id"
+          name="email"
+        />
+        <label for="email">Email</label>
+      </div>
+
+      <div class="form-floating mt-3 mb-3 d-flex" id="password">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control"
+          id="pwd"
+          placeholder="Enter password"
+          name="pswd"
+        />
+        <button *ngIf="showPassword" (click)="togglePasswordVisibility()">
+          <i class="fa-solid fa-eye-slash"></i>
+        </button>
+        <button *ngIf="!showPassword" (click)="togglePasswordVisibility()">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+        <label for="pwd">Password</label>
+      </div>
+
+      <div class="form-floating mt-3 mb-3 d-flex" id="Conformpassword">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control"
+          id="conformpwd"
+          placeholder="Conform password"
+          name="pswd"
+        />
+        <button *ngIf="showPassword" (click)="togglePasswordVisibility()">
+          <i class="fa-solid fa-eye-slash"></i>
+        </button>
+        <button *ngIf="!showPassword" (click)="togglePasswordVisibility()">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+        <label for="pwd">Conform Password</label>
+      </div>
+
+
+      <div>
+        <button id="submit">Submit</button>
+      </div>
+    </form>
+
+    <div id="AllreadyAMember">
+      <div>
+        <p>Allready a member ?</p>
+      </div>
+      <div>
+        <div><button (click)="ChangePage()">Log In</button></div>
+        <hr />
+      </div>
+
+    </div>
+  </div>
+</div>
+

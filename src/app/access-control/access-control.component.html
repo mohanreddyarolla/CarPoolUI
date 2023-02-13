@@ -1,0 +1,3 @@
+
+<app-login *ngIf="inLogIn" (goToSignUpPage)="changePage()"></app-login>
+<app-signup *ngIf="inSignUp" (goToLogInPage)="changePage()"></app-signup>

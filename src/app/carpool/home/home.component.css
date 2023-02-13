@@ -1,0 +1,52 @@
+#Home
+{
+  /* border:solid black; */
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../../assets/carpool/Home.png");
+  width: 100%;
+  min-height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1300px;
+
+}
+
+
+#main
+{
+  display: flex;
+  justify-content: center;
+}
+
+#greetings p{
+
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#main div
+{
+  padding: 20px 40px 0px 0px;
+}
+
+#main button {
+  height:150px;
+  width: 250px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  border:none;
+  color:white;
+
+}
+
+#bookARide button{
+  background-color: rgba(147,25,255,255);
+}
+#offerARide button{
+  background-color: orange;
+}
+

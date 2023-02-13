@@ -1,0 +1,19 @@
+#navBar
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#profile img,img
+{
+  height:50px;
+  border-radius: 25px;
+}
+
+#profile p
+{
+  font-weight: bold;
+  font-size: 20px;
+}
+

@@ -1,0 +1,122 @@
+#YourMatches
+{
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y:scroll;
+  height: 400px;
+}
+
+#YourMatches::-webkit-scrollbar
+{
+  width:4px;
+}
+
+#YourMatches::-webkit-scrollbar-thumb
+{
+  background-color: lightgrey;
+  border-radius: 2px;
+}
+
+.MatchCard
+{
+  /* border:solid black; */
+  width:320px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  background-color: white;
+}
+
+#header
+{
+  display: flex;
+  justify-content: space-between;
+  /* border:solid black; */
+}
+
+#header p
+{
+  font-size: 25px;
+  font-weight: 500;
+  margin:0px;
+  padding: 0px;
+}
+
+#header img
+{
+  height: 40px;
+  border-radius: 20px;
+}
+
+#body
+{
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+#body div div p
+{
+  padding: 0px;
+  margin: 0px;
+}
+
+#body div div
+{
+  margin-bottom: 5px;
+}
+
+.Label
+{
+  font-size: 12px;
+  color: grey;
+  font-weight: 500;
+}
+
+.RideData
+{
+  font-size: 15px;
+}
+
+#LocationAnimation
+{
+  display: flex;
+  /* border:solid black; */
+  margin:15px 5px 5px 5px;
+
+}
+#LocationAnimation div
+{
+  margin-left:3px;
+}
+
+#middle ul
+{
+  display: flex;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li
+{
+  padding: 3px;
+  margin-top: -4px;
+
+  /* border:solid red; */
+}
+
+#Start i, #end i
+{
+  color:rgba(147,25,255,255);
+  /* border:solid red; */
+}
+#middle i
+{
+  color: rgb(204, 198, 198);
+
+}
+

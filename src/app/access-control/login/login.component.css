@@ -9,6 +9,14 @@
 
 
 }
+mat-error
+{
+  /* border:solid; */
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+  color: red;
+}
 .form-control:focus {
   border-color: inherit;
   -webkit-box-shadow: none;

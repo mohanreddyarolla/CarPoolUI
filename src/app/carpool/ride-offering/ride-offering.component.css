@@ -1,0 +1,67 @@
+#OfferRide
+{
+  padding: 30px;
+  padding-top:0px;
+  display: flex;
+  background-image: url('../../../assets/carpool/Bg2.png');
+  /* border: solid black; */
+  width: 100%;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1300px;
+}
+
+#Form1, #Form2
+{
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  margin:10px;
+  padding: 25px 25px 25px 20px;
+  background-color: white;
+  height:430px;
+  width: 315px;
+  /* border: solid red; */
+
+}
+#Form2
+{
+  margin-left: 50px;
+}
+#NextButton
+{
+  display: flex;
+  justify-content: right;
+  margin-top:-20px;
+
+}
+#NextButton button
+{
+  border: none;
+  background-color: white;
+
+}
+
+#NextButton button
+{
+  color:rgba(147,25,255,255);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#NextButton button:hover
+{
+  color:rgba(14,25,255,255);
+  font-weight: bold;
+}
+button
+{
+  margin-top: 20px;
+  background-color: orange;
+  border: none;
+  border-radius: 15px;
+  font-size: 12px;
+  padding: 8px 25px 8px 25px;
+  color: white;
+  font-weight: bold;
+}

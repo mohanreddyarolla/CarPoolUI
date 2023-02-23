@@ -1,0 +1,144 @@
+<div id="form1">
+  <div id="header">
+    <div>
+      <h4>{{RideType}}</h4>
+      <p>we get you the matches asap !</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-toggle-on fa-2x" id="OfferRideIcon" (click)="OpenBookRide()" *ngIf="CurrentScreen== ScreenType.RideOffering"></i>
+      <i class="fa-solid fa-toggle-on fa-2x" id="BookRideIcon" (click)="OpenOfferRide()" *ngIf="CurrentScreen== ScreenType.RideBooking"></i>
+    </div>
+  </div>
+  <div id="FormBody">
+    <div id="FormData">
+      <form [formGroup]="form1" (ngSubmit)="Submit()">
+        <div class="form mb-3 mt-3">
+          <label for="from">From</label>
+          <!-- <input
+
+            type="text"
+            class="form-control"
+            id="from"
+            placeholder=""
+            name="from"
+
+          /> -->
+          <select class="form-select" aria-label="Default select example" formControlName="FromLocation">
+            <option *ngFor="let location of LocationsList" [value]="location.LocationId">{{location.LocationName}}</option>
+            <!-- <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option> -->
+          </select>
+
+          <hr />
+        </div>
+        <div class="error" *ngIf="form1.get('FromLocation')?.touched && form1.get('FromLocation')?.invalid">
+          <p>* Select from location</p>
+        </div>
+
+
+        <div class="form mb-3 mt-3">
+          <label for="destination">To</label>
+          <!-- <input
+
+            type="text"
+            class="form-control"
+            id="destination"
+            placeholder=""
+            name="destination"
+
+          /> -->
+
+          <select class="form-select" aria-label="Default select example" formControlName="ToLocation">
+            <option *ngFor="let location of LocationsList" [value]="location.LocationId">{{location.LocationName}}</option>
+          </select>
+
+          <hr />
+        </div>
+        <div class="error" *ngIf="form1.get('ToLocation')?.touched && form1.get('ToLocation')?.invalid">
+          <p>* Select Destination</p>
+        </div>
+        <div class="error" *ngIf="form1.get('FromLocation')?.touched && (form1.get('FromLocation')?.value == form1.get('ToLocation')?.value)">
+          <p>* Start location and end location cannot be same</p>
+        </div>
+
+        <div class="form mb-3 mt-3"id="date">
+          <label for="Date">Date</label>
+          <input
+
+            type="text"
+            class="form-control"
+            id="Date"
+            placeholder="xx/mm/yyyy"
+            name="date"
+            formControlName="Date"
+
+          />
+          <hr />
+        </div>
+
+        <div class="error" *ngIf="form1.get('Date')?.touched && form1.get('Date')?.invalid">
+          <p>* Enter correct Date.</p>
+        </div>
+
+      </form>
+    </div>
+
+    <div id="LocationAnimation">
+
+      <div id="Start">
+        <i class="fa-solid fa-circle " style="font-size: 12px;"></i>
+      </div>
+
+      <div id="middle">
+        <ul>
+          <li *ngFor='let loop3 of [].constructor(4) ;let i= index'>
+            <i class="fa-solid fa-circle " style="font-size: 6px;" ></i>
+          </li>
+        </ul>
+
+      </div>
+
+      <div id="end">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+
+    </div>
+
+</div>
+
+<div id="Time">
+
+  <label for="Time"> Time </label>
+
+
+  <div id="timestamps" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check" value="5am - 9am" name="Time" id="shift1" autocomplete="off" checked [(ngModel)]="SelectedTime" >
+    <label class="btn btn-outline-primary" for="shift1">5am - 9am</label>
+
+    <input type="radio" class="btn-check" value="9am - 12pm" name="Time" id="shift2" autocomplete="off" [(ngModel)]="SelectedTime">
+    <label class="btn btn-outline-primary" for="shift2">9am - 12pm</label>
+
+    <input type="radio" class="btn-check" value="12pm - 3pm" name="Time" id="shift3" autocomplete="off" [(ngModel)]="SelectedTime">
+    <label class="btn btn-outline-primary" for="shift3">12pm - 3pm</label>
+
+    <input type="radio" class="btn-check" value="3pm - 6pm" name="Time" id="shift4" autocomplete="off" [(ngModel)]="SelectedTime">
+    <label class="btn btn-outline-primary" for="shift4">3pm - 6pm</label>
+
+    <input type="radio" class="btn-check" value="6pm - 9pm" name="Time" id="shift5" autocomplete="off" [(ngModel)]="SelectedTime">
+    <label class="btn btn-outline-primary" for="shift5">6pm - 9pm</label>
+
+
+  </div>
+
+</div>
+<div id="Submit" *ngIf="CurrentScreen == ScreenType.RideBooking ">
+  <button (click)="Submit()" [disabled]="form1.invalid || (form1.get('FromLocation')?.value == form1.get('ToLocation')?.value)">Submit</button>
+</div>
+
+<div id="NextButton"  *ngIf="CurrentScreen == ScreenType.RideOffering">
+  <button  (click)="OpenNextForm()" [disabled]="form1.invalid || (form1.get('FromLocation')?.value == form1.get('ToLocation')?.value)" >Next <span><i class="fa-solid fa-angles-right fa-sm"></i></span></button>
+</div>
+
+<!-- form1.invalid && (form1.get('FromLocation')?.value == form1.get('ToLocation')?.value) -->

@@ -1,0 +1,130 @@
+#Start, #end, #middle
+{
+  display: flex;
+  justify-content: center;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+#middle i
+{
+  color: rgb(204, 198, 198);
+  padding-left:3px;
+
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li
+{
+  padding: 0px;
+  margin: 0px;
+  /* border:solid red; */
+}
+
+#Start i, #end i
+{
+  color:rgba(147,25,255,255);
+  /* border:solid red; */
+}
+#BookingCard
+{
+  padding: 20px;
+}
+#BookData
+{
+  display: flex;
+}
+#container1
+{
+  display: flex;
+}
+
+#container1 div,#container2
+{
+  display:block
+}
+
+#Route
+{
+  height:200px;
+  /* border:solid; */
+  width:150px;
+  overflow-y: scroll;
+}
+
+#Route , #Route label
+{
+  display: flex;
+  justify-content: center;
+}
+#Route::-webkit-scrollbar
+{
+  width:4px;
+}
+
+#Route::-webkit-scrollbar-thumb
+{
+  background-color: lightgrey;
+  border-radius: 2px;
+}
+#LocationAnimation
+{
+  margin:0px 20px 0px 10px;
+}
+label
+{
+  font-size: 13px;
+  font-weight: 500;
+}
+#BookBtn
+{
+  background-color: rgba(0, 128, 0, 0.608);
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  border: none;
+
+}
+#Footer
+{
+  padding:20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Location div
+{
+  /* border: solid; */
+  margin:0px auto;
+  width:fit-content
+}
+#Title
+{
+  background-color:rgba(147,25,255,255);
+
+
+}
+#Title h1
+{
+  width: fit-content;
+  margin: 0px auto;
+  font-weight: bold;
+  color:white;
+}
+#Booking input{
+  margin-left:20px;
+  border:none;
+}
+input:hover
+{
+  border:none;
+}
+

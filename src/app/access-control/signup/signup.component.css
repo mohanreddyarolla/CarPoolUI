@@ -8,6 +8,15 @@
 
 
 }
+mat-error
+{
+  /* border:solid; */
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+  color: red;
+}
+
 
 h2{
   color:white;
@@ -131,4 +140,10 @@ hr {
   margin: 0px;
   padding: 8px;
 }
-
+/*
+#password div,#password
+{
+  margin: 0px;
+  padding: 0px;
+  border:solid;
+} */

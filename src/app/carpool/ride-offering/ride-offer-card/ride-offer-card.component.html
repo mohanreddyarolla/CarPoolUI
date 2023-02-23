@@ -1,0 +1,66 @@
+<div id="Title"><h1 mat-dialog-title>Offer a Ride</h1></div>
+
+<div mat-dialog-content id="BookingCard">
+  <div id="BookData">
+    <div id="container1">
+      <div id="Route">
+        <label>Route</label>
+
+        <div *ngFor="let item of CardData.StopsList" class="Location">
+
+          <div class="LocationName">{{ item }}</div>
+          <div><i class="fa-solid fa-circle" style="font-size: 6px"></i></div>
+
+        </div>
+      </div>
+
+      <div id="LocationAnimation">
+        <div id="Start">
+          <i class="fa-solid fa-circle" style="font-size: 12px"></i>
+        </div>
+
+        <div id="middle">
+          <ul>
+            <li *ngFor="let loop3 of [].constructor(6); let i = index">
+              <i class="fa-solid fa-circle" style="font-size: 6px"></i>
+            </li>
+          </ul>
+        </div>
+
+        <div id="end">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+      </div>
+    </div>
+    <div id="container2">
+      <div>
+        <label>Date</label>
+        <p>{{ CardData.Date }}</p>
+      </div>
+
+      <div>
+        <label>Time</label>
+        <p>{{ CardData.Time }}</p>
+      </div>
+
+      <div>
+        <label>Seats Provided</label>
+        <p>{{ CardData.SeatsProvided }}</p>
+      </div>
+
+      <div>
+        <label >Price</label>
+        <p>{{CardData.Price}}</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div mat-dialog-actions id="Footer">
+  <button mat-button mat-dialog-close>Close</button>
+  <button id="BookBtn" (click)="OfferARide()">Offer</button>
+</div>
+

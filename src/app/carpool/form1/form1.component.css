@@ -1,0 +1,227 @@
+#header
+{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.form-control:focus, select:focus {
+  border-color: inherit;
+  border:none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+select option,select
+{
+  border: none;
+  appearance: none;
+  background-color: white;
+}
+
+#BookRideIcon
+{
+  color: rgba(147,25,255,255);
+}
+#header p
+{
+  font-size: 12px;
+  color: rgb(160, 160, 160);
+  font-weight: 400;
+}
+
+#header h4{
+  padding: 0px;
+  margin: 0px;
+}
+
+label
+{
+  /* padding: 0px;
+  margin: 0px; */
+  font-size: 13px;
+  color: rgb(173, 172, 172);
+  font-weight:500;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+input::placeholder
+{
+
+  font-size: 13px;
+  color: rgb(189, 189, 189);
+}
+
+input
+{
+  border: none;
+  width:230px;
+  height: 20px;
+  font-size: 15px;
+}
+
+
+#FormData div
+{
+  padding: 0px;
+  margin: 0px;
+  /* border: solid black; */
+}
+.mt-3 {
+  margin-top: -1rem!important;
+}
+hr{
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+#FormBody
+{
+  display: flex;
+
+}
+
+#FormData
+{
+  margin-right: 20px;
+}
+
+#Start, #end, #middle
+{
+  display: flex;
+  justify-content: center;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+#middle i
+{
+  color: rgb(204, 198, 198);
+
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li
+{
+  padding: 0px;
+  margin: 0px;
+  /* border:solid red; */
+}
+
+#Start i, #end i
+{
+  color:rgba(147,25,255,255);
+  /* border:solid red; */
+}
+
+.btn-check:checked+.btn
+{
+  background-color: rgba(147,25,255,255);
+}
+.btn-outline-primary
+{
+  --bs-btn-color: rgba(147,25,255,255);
+  --bs-btn-border-color: rgba(147,25,255,255);
+}
+
+#timestamps{
+  /* width: 290px; */
+  /* border: solid; */
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+#timestamps .btn
+{
+  width:70px ;
+  padding: 2px 4px 2px 4px ;
+  margin: 3px 5px ;
+  border-radius: 15px;
+  font-size: 11px;
+
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn
+{
+  flex:none
+}
+
+#middle li
+{
+  margin-top: -10px;
+}
+
+#OfferRideIcon
+{
+  color:orange;
+}
+
+#Submit button{
+  margin-top: 10px;
+  background-color: orange;
+  border: none;
+  border-radius: 15px;
+  font-size: 12px;
+  padding: 8px 25px 8px 25px;
+  color: white;
+  font-weight: bold;
+}
+
+#NextButton
+{
+  display: flex;
+  justify-content: right;
+
+}
+#NextButton button
+{
+  border: none;
+  background-color: white;
+  color:rgba(147,25,255,255);
+  font-size: 15px;
+  font-weight: 500;
+
+}
+.error p
+{
+  color: red;
+  font-size: 13px;
+  margin: 0px;
+  padding: 10px;
+  margin-top: -20px;
+  /* border: solid; */
+}
+
+
+#NextButton button:hover
+{
+  color:rgba(14,25,255,255);
+  font-weight: bold;
+}
+
+#form1
+{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* border:solid; */
+  height: 400px;
+
+}
+#form1::-webkit-scrollbar
+{
+  width:4px;
+}
+
+#form1::-webkit-scrollbar-thumb
+{
+  background-color: lightgrey;
+  border-radius: 2px;
+}

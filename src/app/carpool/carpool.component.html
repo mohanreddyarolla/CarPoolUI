@@ -1,12 +1,35 @@
+<div id="AccessControl" *ngIf="OpenAccessControl">
 
-<!-- <div id="Carpool" class="row">
-  <div class="col-8">
-    <app-intro-page></app-intro-page>
+  <div id="Carpool" class="row">
+    <div class="col-8">
+      <app-intro-page></app-intro-page>
+    </div>
+    <div class="col-4">
+      <app-access-control></app-access-control>
+    </div>
   </div>
-  <div class="col-4">
-    <app-access-control></app-access-control>
-  </div>
+
 </div>
- -->
-<app-nav-bar></app-nav-bar>
- <app-home></app-home>
+
+<div id="CarpoolHome" *ngIf="OpenCarpoolHome">
+  <div id="NavBar">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+  <div id="Home" *ngIf="OpenHome">
+    <app-home></app-home>
+  </div>
+
+  <div id="RideOffering" *ngIf="OpenRideOfferingComponent">
+    <app-ride-offering></app-ride-offering>
+  </div>
+
+  <div id="RideBooking" *ngIf="OpenRideBookingComponent">
+    <app-ride-booking></app-ride-booking>
+  </div>
+
+  <div id="MyRides" *ngIf="OpenMyRidesComponent">
+    <app-my-rides></app-my-rides>
+  </div>
+
+</div>

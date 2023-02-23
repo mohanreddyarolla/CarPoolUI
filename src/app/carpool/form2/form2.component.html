@@ -1,0 +1,147 @@
+<div id="Form2">
+  <div id="header">
+    <div>
+      <h4>Offer a Ride</h4>
+      <p>we get you the matches asap !</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-toggle-on fa-2x" id="OfferRideIcon" (click)="OpenBookRide()"></i>
+    </div>
+  </div>
+
+  <div id="FormBody">
+    <div id="FormData">
+      <form #form2Ref="ngForm">
+        <div id="stops">
+          <div
+            id="stop"
+            *ngFor="let item of [].constructor(NumberOfStops); let i = index"
+          >
+            <div>
+              <label >Stop {{ i + 1 }}</label>
+              <div id="input">
+                <div [id]="'stop'+i">
+                  <!-- <input
+                    type="text"
+                    class="form-control"
+                    id="Stop"
+                    placeholder=""
+                    name="Stop1"
+                  /> -->
+                  <select   class="form-select" aria-label="Default select example" [value]="i" ngModel [name]="'Stop'+(i+1)">
+                    <option *ngFor="let location of LocationsList" [value]="location.LocationId" >{{location.LocationName}}</option>
+                  </select>
+                </div>
+                <div>
+                  <button id="AddButton" (click)="AddStop(form2Ref.value)" [hidden]='AddButtonsHiddenList[i]'>
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+            <div id="SelectionError" [hidden]="SelectionError  || AddButtonsHiddenList[i]">
+              * Please select the location
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <div id="AvailableSeatsAndPrice">
+          <div id="AvailableSeats">
+            <label for="Time">Available Seats</label>
+
+            <div
+              id="Seats"
+              class="btn-group"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="AvailableSeats"
+                id="seat1"
+                autocomplete="off"
+                value="1"
+                checked
+                [(ngModel)]="SelectedSeats"
+              />
+              <label class="btn btn-outline-primary" for="seat1">1</label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="AvailableSeats"
+                id="seat2"
+                autocomplete="off"
+                value="2"
+                [(ngModel)]="SelectedSeats"
+              />
+              <label class="btn btn-outline-primary" for="seat2">2</label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="AvailableSeats"
+                id="seat3"
+                value="3"
+                autocomplete="off"
+                [(ngModel)]="SelectedSeats"
+              />
+              <label class="btn btn-outline-primary" for="seat3">3</label>
+            </div>
+          </div>
+
+          <div id="Price">
+            <div>
+              <label for="Price">Price</label>
+              <div id="Priceinput">
+                <div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Price"
+                    placeholder=""
+                    name="Price"
+                    value="0$"
+                    [(ngModel)]="Price"
+                  />
+                  <hr/>
+                  <div [hidden]="InvalidPrice" id="InvalidPrice">
+                   * Invalid Price Value
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="Submit">
+          <button (click)="Submit(form2Ref.value)">Submit</button>
+        </div>
+
+      </form>
+    </div>
+
+    <div id="LocationAnimation">
+      <div id="Start">
+        <i class="fa-solid fa-circle" style="font-size: 12px"></i>
+      </div>
+
+      <div id="middle">
+        <ul>
+          <li *ngFor="let loop3 of [].constructor(9); let i = index">
+            <i class="fa-solid fa-circle" style="font-size: 6px"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div id="end">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+    </div>
+  </div>
+</div>

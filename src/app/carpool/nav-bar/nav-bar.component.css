@@ -5,6 +5,12 @@
   padding: 20px;
 }
 
+#profile
+{
+  display: flex;
+}
+
+
 #profile img,img
 {
   height:50px;
@@ -15,5 +21,22 @@
 {
   font-weight: bold;
   font-size: 20px;
+  padding-top: 20px;
+}
+
+button
+{
+  background-color: white;
+  border: none;
+}
+
+
+.dropdown-item:hover {
+  color: white;
+  background-color: rgba(147,25,255,255);
+}
+
+.dropdown button:hover,.dropdown button {
+  background: white;
 }
 

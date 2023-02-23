@@ -9,16 +9,23 @@
       <h2>Log In</h2>
       <hr/>
     </div>
-    <form>
+    <form [formGroup]="LoginForm">
+
       <div class="form-floating mb-3 mt-3">
         <input
+
           type="text"
           class="form-control"
           id="email"
           placeholder="Enter email Id"
           name="email"
+          formControlName="emailFormControl"
+          [(ngModel)]="logInRequest.EmailId"
         />
         <label for="email">Email</label>
+        <mat-error *ngIf="LoginForm.get('emailFormControl')?.touched && LoginForm.get('emailFormControl')?.invalid">
+          * Enter Valid Email
+        </mat-error>
       </div>
 
       <div class="form-floating mt-3 mb-3 d-flex" id="password">
@@ -28,6 +35,8 @@
           id="pwd"
           placeholder="Enter password"
           name="pswd"
+          formControlName="passwordFormControl"
+          [(ngModel)]="logInRequest.Password"
         />
         <button *ngIf="showPassword" (click)="togglePasswordVisibility()">
           <i class="fa-solid fa-eye-slash"></i>
@@ -36,10 +45,24 @@
           <i class="fa-solid fa-eye"></i>
         </button>
         <label for="pwd">Password</label>
+
       </div>
+      <mat-error *ngIf="LoginForm.get('passwordFormControl')?.touched && LoginForm.get('passwordFormControl')?.invalid">
+        * Enter Valid password
+        <!-- Password should contain:
+        At least 8 characters in length,
+        Lowercase letters,
+        Uppercase letters,
+        Numbers,
+        Special characters -->
+      </mat-error>
+
+      <mat-error id="BackendResponse">
+        {{Status}}
+      </mat-error>
 
       <div>
-        <button id="submit">Submit</button>
+        <button id="submit" [disabled]="LoginForm.invalid" (click)="Submit()">Submit</button>
       </div>
     </form>
 

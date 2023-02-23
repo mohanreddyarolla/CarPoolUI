@@ -1,12 +1,30 @@
-
 <div id="navBar">
-
   <div id="logo">
-    <img src="../assets/carpool/logo.png" alt="" />
+    <button (click)="OpenHome()">
+      <img src="../assets/carpool/logo.png" alt="" />
+    </button>
   </div>
   <div id="profile">
-    <p>{{UserName}} <span>
-      <img src="../assets/carpool/profile-1.png" alt="">
-    </span></p>
+    <div>
+      <p>{{ UserName }}</p>
+    </div>
+
+    <div>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src="../assets/carpool/profile-1.png" alt="" />
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" (click)="OpenProfile()">Profile</a></li>
+          <li><a class="dropdown-item" (click)="OpenMyRides()">My Rides</a></li>
+          <li><a class="dropdown-item" (click)="Logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

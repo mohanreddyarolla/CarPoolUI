@@ -1,94 +1,92 @@
-#header
-{
+#header {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
   margin-bottom: 20px;
 }
-.form-control:focus, select:focus {
+
+.form-control:focus,
+select:focus {
   border-color: inherit;
-  border:none;
+  border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-select option,select
-{
+
+select option,
+select {
   border: none;
   appearance: none;
   background-color: white;
 }
 
-#BookRideIcon
-{
-  color: rgba(147,25,255,255);
+#BookRideIcon {
+  color: rgba(147, 25, 255, 255);
 }
-#header p
-{
+
+#header p {
   font-size: 12px;
   color: rgb(160, 160, 160);
   font-weight: 400;
 }
 
-#header h4{
+#header h4 {
   padding: 0px;
   margin: 0px;
 }
 
-label
-{
+label {
   /* padding: 0px;
   margin: 0px; */
   font-size: 13px;
   color: rgb(173, 172, 172);
-  font-weight:500;
+  font-weight: 500;
   padding-left: 10px;
   padding-top: 10px;
 }
 
-input::placeholder
-{
+input::placeholder {
 
   font-size: 13px;
   color: rgb(189, 189, 189);
 }
 
-input
-{
+input {
   border: none;
-  width:230px;
+  width: 230px;
   height: 20px;
   font-size: 15px;
 }
 
 
-#FormData div
-{
+#FormData div {
   padding: 0px;
   margin: 0px;
   /* border: solid black; */
 }
+
 .mt-3 {
-  margin-top: -1rem!important;
+  margin-top: -1rem !important;
 }
-hr{
+
+hr {
   padding: 0px;
   margin: 0px;
   margin-left: 10px;
 }
 
-#FormBody
-{
+#FormBody {
   display: flex;
 
 }
 
-#FormData
-{
+#FormData {
   margin-right: 20px;
 }
 
-#Start, #end, #middle
-{
+#Start,
+#end,
+#middle {
   display: flex;
   justify-content: center;
 
@@ -96,42 +94,39 @@ hr{
   margin: 0px;
 }
 
-#middle i
-{
+#middle i {
   color: rgb(204, 198, 198);
 
 }
 
-ul{
+ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
 
-li
-{
+li {
   padding: 0px;
   margin: 0px;
   /* border:solid red; */
 }
 
-#Start i, #end i
-{
-  color:rgba(147,25,255,255);
+#Start i,
+#end i {
+  color: rgba(147, 25, 255, 255);
   /* border:solid red; */
 }
 
-.btn-check:checked+.btn
-{
-  background-color: rgba(147,25,255,255);
-}
-.btn-outline-primary
-{
-  --bs-btn-color: rgba(147,25,255,255);
-  --bs-btn-border-color: rgba(147,25,255,255);
+.btn-check:checked+.btn {
+  background-color: rgba(147, 25, 255, 255);
 }
 
-#timestamps{
+.btn-outline-primary {
+  --bs-btn-color: rgba(147, 25, 255, 255);
+  --bs-btn-border-color: rgba(147, 25, 255, 255);
+}
+
+#timestamps {
   /* width: 290px; */
   /* border: solid; */
 
@@ -139,32 +134,31 @@ li
   flex-wrap: wrap;
 
 }
-#timestamps .btn
-{
-  width:70px ;
-  padding: 2px 4px 2px 4px ;
-  margin: 3px 5px ;
+
+#timestamps .btn {
+  width: 70px;
+  padding: 2px 4px 2px 4px;
+  margin: 3px 5px;
   border-radius: 15px;
   font-size: 11px;
 
 }
 
-.btn-group-vertical>.btn, .btn-group>.btn
-{
-  flex:none
+.btn-group-vertical>.btn,
+.btn-group>.btn {
+  flex: none
 }
 
-#middle li
-{
+#middle li {
   margin-top: -10px;
 }
 
-#OfferRideIcon
-{
-  color:orange;
+#OfferRideIcon {
+  color: orange;
+  transform: rotateY(180deg);
 }
 
-#Submit button{
+#Submit button {
   margin-top: 10px;
   background-color: orange;
   border: none;
@@ -175,23 +169,22 @@ li
   font-weight: bold;
 }
 
-#NextButton
-{
+#NextButton {
   display: flex;
   justify-content: right;
 
 }
-#NextButton button
-{
+
+#NextButton button {
   border: none;
   background-color: white;
-  color:rgba(147,25,255,255);
+  color: rgba(147, 25, 255, 255);
   font-size: 15px;
   font-weight: 500;
 
 }
-.error p
-{
+
+.error p {
   color: red;
   font-size: 13px;
   margin: 0px;
@@ -201,27 +194,24 @@ li
 }
 
 
-#NextButton button:hover
-{
-  color:rgba(14,25,255,255);
+#NextButton button:hover {
+  color: rgba(14, 25, 255, 255);
   font-weight: bold;
 }
 
-#form1
-{
+#form1 {
   overflow-y: scroll;
   overflow-x: hidden;
   /* border:solid; */
   height: 400px;
 
 }
-#form1::-webkit-scrollbar
-{
-  width:4px;
+
+#form1::-webkit-scrollbar {
+  width: 4px;
 }
 
-#form1::-webkit-scrollbar-thumb
-{
+#form1::-webkit-scrollbar-thumb {
   background-color: lightgrey;
   border-radius: 2px;
 }

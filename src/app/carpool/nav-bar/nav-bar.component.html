@@ -1,6 +1,6 @@
 <div id="navBar">
   <div id="logo">
-    <button (click)="OpenHome()">
+    <button (click)="OpenHome()" routerLink="/Home">
       <img src="../assets/carpool/logo.png" alt="" />
     </button>
   </div>
@@ -21,8 +21,8 @@
         </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" (click)="OpenProfile()">Profile</a></li>
-          <li><a class="dropdown-item" (click)="OpenMyRides()">My Rides</a></li>
-          <li><a class="dropdown-item" (click)="Logout()">Logout</a></li>
+          <li><a class="dropdown-item" (click)="OpenMyRides()" routerLink="/Home/MyRides">My Rides</a></li>
+          <li><a class="dropdown-item" (click)="Logout()" routerLink="/LogIn">Logout</a></li>
         </ul>
       </div>
     </div>

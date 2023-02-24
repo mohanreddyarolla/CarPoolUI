@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RideOfferCardComponent } from './carpool/ride-offering/ride-offer-card/ride-offer-card.component';
 import { MessageComponent } from './carpool/message/message.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ProfileComponent } from './carpool/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BookingCardComponent,
     RideOfferCardComponent,
     MessageComponent,
+    ProfileComponent,
 
   ],
   imports: [

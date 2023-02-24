@@ -7,6 +7,7 @@ import { CarpoolDataServiceService } from 'src/app/Service/carpool-data-service.
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MessageComponent } from 'src/app/carpool/message/message.component';
 import { User } from 'src/app/Models/User';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,7 +25,8 @@ export class LoginComponent {
   constructor(
     private snakBar: MatSnackBar,
     private service: CarpoolServiceService,
-    private DataService: CarpoolDataServiceService
+    private DataService: CarpoolDataServiceService,
+    private route: Router
   ) {
     this.logInRequest = new LogInRequest();
   }
@@ -65,8 +67,10 @@ export class LoginComponent {
           this.service.user.UserName = data;
           // this.service.CurrentUser = data.UserId;
           this.service.changeScreen(ScreenType.Home);
-          this.service.ScreenChanged.next('')
+          this.service.ScreenChanged.next('');
           console.log(this.service.user);
+
+          this.route.navigate(['/Home']);
         });
       } else {
         this.Status = data.StatusMessage;

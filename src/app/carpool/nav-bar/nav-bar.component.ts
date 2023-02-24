@@ -40,7 +40,7 @@ export class NavBarComponent implements OnInit{
 
   Logout()
   {
-    this.service.changeScreen(ScreenType.SignUp)
+    this.service.changeScreen(ScreenType.LogIn)
     this.service.ScreenChanged.next('')
 
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
 import { ScreenType } from 'src/app/Models/Enums/ScreenType';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { ScreenType } from 'src/app/Models/Enums/ScreenType';
 export class HomeComponent {
   UserName!:string
 
-  constructor(private service:CarpoolServiceService)
+  constructor(private service:CarpoolServiceService,private router:Router)
   {
 
   }
@@ -23,11 +24,13 @@ export class HomeComponent {
   OpenBookRide()
   {
     this.service.changeScreen(ScreenType.RideBooking)
+    this.router.navigate(['/Home/Book'])
   }
 
   OpenOfferRide()
   {
-    console.log('In offer')
+
     this.service.changeScreen(ScreenType.RideOffering)
+    this.router.navigate(['/Home/Offer'])
   }
 }

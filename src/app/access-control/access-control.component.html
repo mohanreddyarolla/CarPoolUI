@@ -1,3 +1,13 @@
+<!-- <app-login *ngIf="inLogIn" (goToSignUpPage)="changePage()"></app-login>
+<app-signup *ngIf="inSignUp" (goToLogInPage)="changePage()"></app-signup> -->
 
-<app-login *ngIf="inLogIn" (goToSignUpPage)="changePage()"></app-login>
-<app-signup *ngIf="inSignUp" (goToLogInPage)="changePage()"></app-signup>
+<div id="AccessControl">
+  <div id="Carpool" class="row">
+    <div class="col-8">
+      <app-intro-page></app-intro-page>
+    </div>
+    <div class="col-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

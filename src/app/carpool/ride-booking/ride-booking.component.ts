@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { count } from 'rxjs';
 import { OfferedRides } from 'src/app/Models/DataModels/OfferedRides';
 import { RideData } from 'src/app/Models/DataModels/RideData';
+import { ScreenType } from 'src/app/Models/Enums/ScreenType';
 import { MatchingRides } from 'src/app/Models/MatchingRide';
 import { CarpoolDataServiceService } from 'src/app/Service/carpool-data-service.service';
 import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
@@ -11,7 +12,7 @@ import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
   templateUrl: './ride-booking.component.html',
   styleUrls: ['./ride-booking.component.css'],
 })
-export class RideBookingComponent {
+export class RideBookingComponent implements OnInit{
   MatchingRides!: MatchingRides[];
   OfferedRides!: OfferedRides[];
   MatchFound!:boolean
@@ -49,6 +50,10 @@ export class RideBookingComponent {
       })
 
     });
+  }
+  ngOnInit(): void {
+    this.service.CurrentScreen = ScreenType.RideBooking
+    console.log('In Ride Booking')
   }
 
   // loadAvailableRides() {

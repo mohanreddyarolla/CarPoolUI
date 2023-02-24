@@ -27,19 +27,22 @@ export class SignupComponent {
   SignUpForm!: FormGroup;
 
   public showPassword: boolean = false;
-  Status!:string
+  Status!: string;
 
   @Output() goToLogInPage = new EventEmitter();
 
-  constructor(private snakBar:MatSnackBar, private service: CarpoolServiceService,private DataService:CarpoolDataServiceService) {}
+  constructor(
+    private snakBar: MatSnackBar,
+    private service: CarpoolServiceService,
+    private DataService: CarpoolDataServiceService
+  ) {}
 
   ngOnInit(): void {
     this.signUpRequest = new SignUpRequest();
     this.PasswordMatched = true;
 
     this.SignUpForm = new FormGroup({
-
-      NameFormControl:new FormControl('',[Validators.required]),
+      NameFormControl: new FormControl('', [Validators.required]),
 
       emailFormControl: new FormControl('', [
         Validators.required,
@@ -51,7 +54,8 @@ export class SignupComponent {
         Validators.pattern(
           /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
         ),
-        Validators.minLength(8)]),
+        Validators.minLength(8),
+      ]),
 
       conformPasswordFormControl: new FormControl('', [Validators.required]),
     });
@@ -66,46 +70,32 @@ export class SignupComponent {
   }
 
   Submit() {
-    console.log(this.signUpRequest)
-    console.log(this.SignUpForm)
+    console.log(this.signUpRequest);
+    console.log(this.SignUpForm);
 
     // this.DataService.getUsers().subscribe((data)=>
     // {
     //   console.log(data)
     // });
 
-    this.DataService.SignUpUser(this.signUpRequest).subscribe((data:any)=>
-    {
+    this.DataService.SignUpUser(this.signUpRequest).subscribe((data: any) => {
+      if (data.Status) {
+        this.service.user = new User();
+        this.service.user.UserId = data.UserId;
 
-      if(data.Status)
-      {
-        this.service.user = new User()
-        this.service.user.UserId = data.UserId
-
-        this.DataService.GetUserName(data.UserId).subscribe((data:any)=>
-        {
-          this.service.user.UserName = data
+        this.DataService.GetUserName(data.UserId).subscribe((data: any) => {
+          this.service.user.UserName = data;
           this.service.changeScreen(ScreenType.Home);
-          this.service.ScreenChanged.next('')
+          this.service.ScreenChanged.next('');
           // this.service.CurrentUser = data.UserId
-        })
-
-
+        });
+      } else {
+        this.Status = data.StatusMessage;
       }
-      else
-      {
-        this.Status = data.StatusMessage
-
-      }
-      this.service.Message = data.StatusMessage
-      this.snakBar.openFromComponent(MessageComponent,{
-        duration:1000
-      })
-
+      this.service.Message = data.StatusMessage;
+      this.snakBar.openFromComponent(MessageComponent, {
+        duration: 1000,
+      });
     });
-
-
   }
-
-
 }

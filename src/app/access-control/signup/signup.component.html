@@ -1,16 +1,17 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+  rel="stylesheet"
+/>
 
 <div id="signup">
-
   <div id="form">
     <div id="sighupheadding">
       <h2>Sign Up</h2>
-      <hr/>
+      <hr />
     </div>
     <form [formGroup]="SignUpForm" ngNativeValidate (ngSubmit)="Submit()">
-
       <div class="form-floating mb-3 mt-3">
         <input
           type="text"
@@ -22,10 +23,14 @@
           [(ngModel)]="signUpRequest.Name"
         />
         <label for="name">Full Name</label>
-        <mat-error *ngIf="SignUpForm.get('NameFormControl')?.touched && SignUpForm.get('NameFormControl')?.invalid">
+        <mat-error
+          *ngIf="
+            SignUpForm.get('NameFormControl')?.touched &&
+            SignUpForm.get('NameFormControl')?.invalid
+          "
+        >
           * Enter Name
         </mat-error>
-
       </div>
 
       <div class="form-floating mb-3 mt-3">
@@ -39,14 +44,18 @@
           [(ngModel)]="signUpRequest.EmailId"
         />
         <label for="email">Email</label>
-        <mat-error *ngIf="SignUpForm.get('emailFormControl')?.touched && SignUpForm.get('emailFormControl')?.invalid">
+        <mat-error
+          *ngIf="
+            SignUpForm.get('emailFormControl')?.touched &&
+            SignUpForm.get('emailFormControl')?.invalid
+          "
+        >
           * Enter Valid Email
         </mat-error>
-
       </div>
 
       <div id="password">
-        <div class="form-floating  d-flex" >
+        <div class="form-floating d-flex">
           <input
             [type]="showPassword ? 'text' : 'password'"
             class="form-control"
@@ -66,20 +75,23 @@
           <label for="pwd">Password</label>
         </div>
 
-      <mat-error *ngIf="SignUpForm.get('passwordFormControl')?.touched && SignUpForm.get('passwordFormControl')?.invalid">
-        * Enter Valid password
-        <!-- Password should contain:
+        <mat-error
+          *ngIf="
+            SignUpForm.get('passwordFormControl')?.touched &&
+            SignUpForm.get('passwordFormControl')?.invalid
+          "
+        >
+          * Enter Valid password
+          <!-- Password should contain:
         At least 8 characters in length,
         Lowercase letters,
         Uppercase letters,
         Numbers,
         Special characters -->
-      </mat-error>
+        </mat-error>
       </div>
 
-
       <div class="form-floating mt-3 mb-3 d-flex" id="Conformpassword">
-
         <input
           [type]="showPassword ? 'text' : 'password'"
           class="form-control"
@@ -97,18 +109,32 @@
           <i class="fa-solid fa-eye"></i>
         </button>
         <label for="pwd">Confirm Password</label>
-
       </div>
-      <mat-error *ngIf="(SignUpForm.get('conformPasswordFormControl')?.touched )&&(SignUpForm.get('passwordFormControl')?.value != SignUpForm.get('conformPasswordFormControl')?.value)">
+      <mat-error
+        *ngIf="
+          SignUpForm.get('conformPasswordFormControl')?.touched &&
+          SignUpForm.get('passwordFormControl')?.value !=
+            SignUpForm.get('conformPasswordFormControl')?.value
+        "
+      >
         * Password not Matched
       </mat-error>
 
       <mat-error id="BackendResponse">
-        {{Status}}
+        {{ Status }}
       </mat-error>
 
       <div>
-        <button id="submit" [disabled]="SignUpForm.invalid || (SignUpForm.get('passwordFormControl')?.value != SignUpForm.get('conformPasswordFormControl')?.value)">Submit</button>
+        <button
+          id="submit"
+          [disabled]="
+            SignUpForm.invalid ||
+            SignUpForm.get('passwordFormControl')?.value !=
+              SignUpForm.get('conformPasswordFormControl')?.value
+          "
+        >
+          Submit
+        </button>
       </div>
     </form>
 
@@ -117,13 +143,9 @@
         <p>Allready a member ?</p>
       </div>
       <div>
-        <div><button (click)="ChangePage()">Log In</button></div>
+        <div><button routerLink="/LogIn">Log In</button></div>
         <hr />
       </div>
-
     </div>
-
-
   </div>
 </div>
-

@@ -58,7 +58,7 @@ export class RideOfferCardComponent implements OnInit {
     offerRideRequest.Time = this.service.Form1Data.Time;
     offerRideRequest.TotalPrice = this.service.Form2Data.Price;
     offerRideRequest.TotalSeats = this.service.Form2Data.AvailabeSeats;
-    offerRideRequest.RideProviderId = this.service.CurrentUser;
+    offerRideRequest.RideProviderId = this.service.user.UserId;
     offerRideRequest.StopList = AllStops;
 
     // this.service.Message='Sucessfull'
@@ -69,7 +69,7 @@ export class RideOfferCardComponent implements OnInit {
     this.dataService.OfferARide(offerRideRequest).subscribe((data: any) => {
       console.log(data);
       this.service.Message = data;
-      this.snakBar.openFromComponent(MessageComponent, { duration: 800 });
+      this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
       this.dialog.closeAll()
     });
   }

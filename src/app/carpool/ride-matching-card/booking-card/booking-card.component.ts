@@ -49,7 +49,7 @@ export class BookingCardComponent implements OnInit {
       this.service.SelectedRideDetails.OfferedRideId;
     rideBookingRequest.FromLocationId = this.service.Form1Data.FromLocationId;
     rideBookingRequest.ToLocationId = this.service.Form1Data.ToLocationId;
-    rideBookingRequest.UserId = this.service.CurrentUser;
+    rideBookingRequest.UserId = this.service.user.UserId;
     rideBookingRequest.RequiredSeats = this.RequiredSeats.nativeElement.value;
 
     this.dataService.BookARide(rideBookingRequest).subscribe((data: any) => {
@@ -57,7 +57,7 @@ export class BookingCardComponent implements OnInit {
       console.log(rideBookingRequest);
       this.service.Message = data;
       this.dialog.closeAll()
-      this.snakBar.openFromComponent(MessageComponent, { duration: 800 });
+      this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
 
     });
   }

@@ -10,6 +10,24 @@
       <hr/>
     </div>
     <form [formGroup]="SignUpForm" ngNativeValidate (ngSubmit)="Submit()">
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter Full Name"
+          name="name"
+          formControlName="NameFormControl"
+          [(ngModel)]="signUpRequest.Name"
+        />
+        <label for="name">Full Name</label>
+        <mat-error *ngIf="SignUpForm.get('NameFormControl')?.touched && SignUpForm.get('NameFormControl')?.invalid">
+          * Enter Name
+        </mat-error>
+
+      </div>
+
       <div class="form-floating mb-3 mt-3">
         <input
           type="text"
@@ -68,7 +86,6 @@
           id="conformpwd"
           placeholder="Conform password"
           name="pswd"
-          (input)="MathcPassword()"
           formControlName="conformPasswordFormControl"
           [(ngModel)]="conformPassword"
         />

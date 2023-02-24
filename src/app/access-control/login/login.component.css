@@ -1,7 +1,6 @@
-#login
-{
+#login {
 
-  background-image: url('../../../assets/carpool/Bg1.png'), linear-gradient(rgba(147,25,255,255), rgba(147,25,255,255));
+  background-image: url('../../../assets/carpool/Bg1.png'), linear-gradient(rgba(147, 25, 255, 255), rgba(147, 25, 255, 255));
   height: 100%;
   padding-top: 100px;
   font-family: 'Open Sans', sans-serif;
@@ -9,107 +8,95 @@
 
 
 }
-mat-error
-{
+
+mat-error {
   /* border:solid; */
   margin: 0px;
   padding: 0px;
   font-size: 13px;
   color: red;
 }
+
 .form-control:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-input
-{
+input {
   border: none;
 }
 
 
-h2{
-  color:white;
+h2 {
+  color: white;
   padding-bottom: 30px;
   display: flex;
   justify-content: center;
   font-weight: bold;
 }
 
-#login
-{
-  width:100%;
+#login {
+  width: 100%;
   display: flex;
-  margin:0 auto;
-  justify-content:center ;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-form
-{
-  width:300px
+form {
+  width: 300px
 }
-/* .form-control {
-  height:50px;
 
-} */
-#pwd
-{
+#pwd {
   border-radius: 5px 0px 0px 5px;
-  border:none;
+  border: none;
 }
 
-button{
+button {
   border: none;
   background-color: white;
   border-radius: 0px 5px 5px 0px;
 }
 
-.icon
-{
+.icon {}
 
-
-}
-.login-form{
+.login-form {
   display: flex;
   flex-direction: column;
   padding: 50px;
 }
 
-#password i
-{
-  color:grey;
+#password i {
+  color: grey;
 }
 
-#submit
-{
-  color:white;
+#submit {
+  color: white;
   font-weight: bold;
-  border-radius:25px;
+  border-radius: 25px;
   padding: 5px 30px 5px 30px;
   display: flex;
-  margin:0 auto;
-  justify-content:center ;
-  margin-top:20px;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 20px;
   background-color: orange;
 }
 
-#NotaMember
-{
+#NotaMember {
   padding-top: 20px;
   display: flex;
   display: flex;
-  margin:0 auto;
-  justify-content:center ;
-  color:white;
+  margin: 0 auto;
+  justify-content: center;
+  color: white;
 
 }
-#NotaMember p
-{
+
+#NotaMember p {
   padding-right: 10px;
 }
-#NotaMember button
-{
+
+#NotaMember button {
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -128,15 +115,14 @@ hr {
 
 }
 
-#loginheadding
-{
+#loginheadding {
   width: fit-content;
   margin: 0 auto;
   justify-content: center;
 
 }
-#loginheadding h2
-{
+
+#loginheadding h2 {
   margin: 0px;
   padding: 8px;
 }

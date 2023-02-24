@@ -26,7 +26,6 @@ export class CarpoolDataServiceService {
 
   SignUpUser(signUpRequest:SignUpRequest)
   {
-    signUpRequest.Name='NewUser'
     return this.http.post(this.APIUrl+'/SignUp',signUpRequest)
   }
 

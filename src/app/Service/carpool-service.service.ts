@@ -9,6 +9,7 @@ import { RideData } from '../Models/DataModels/RideData';
 import { HttpClient } from '@angular/common/http';
 import { CarpoolDataServiceService } from './carpool-data-service.service';
 import { OfferedRides } from '../Models/DataModels/OfferedRides';
+import { User } from '../Models/User';
 // enum RideType
 // {
 //   RideBooking,
@@ -35,9 +36,10 @@ export class CarpoolServiceService {
   OpenForm2 = new Subject();
   ShowAvailableRides = new Subject();
 
-  CurrentUser!:number
+  // CurrentUser!:number
   SelectedRideIdToBook!:number
   SelectedRideDetails!:OfferedRides
+  user!:User
 
   constructor(private dataService:CarpoolDataServiceService) {
     this.GetAllAvailableLocations();

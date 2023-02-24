@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
 import { ScreenType } from 'src/app/Models/Enums/ScreenType';
 
@@ -13,11 +13,11 @@ export class NavBarComponent implements OnInit{
 
   constructor(private service:CarpoolServiceService)
   {
-
+    this.UserName =this.service.user.UserName
   }
 
   ngOnInit(): void {
-    this.UserName ="John Wills"
+    this.UserName =this.service.user.UserName
   }
 
 

@@ -1,19 +1,19 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+  rel="stylesheet"
+/>
 
 <div id="login">
-
   <div id="form">
     <div id="loginheadding">
       <h2>Log In</h2>
-      <hr/>
+      <hr />
     </div>
     <form [formGroup]="LoginForm">
-
       <div class="form-floating mb-3 mt-3">
         <input
-
           type="text"
           class="form-control"
           id="email"
@@ -23,7 +23,12 @@
           [(ngModel)]="logInRequest.EmailId"
         />
         <label for="email">Email</label>
-        <mat-error *ngIf="LoginForm.get('emailFormControl')?.touched && LoginForm.get('emailFormControl')?.invalid">
+        <mat-error
+          *ngIf="
+            LoginForm.get('emailFormControl')?.touched &&
+            LoginForm.get('emailFormControl')?.invalid
+          "
+        >
           * Enter Valid Email
         </mat-error>
       </div>
@@ -45,9 +50,13 @@
           <i class="fa-solid fa-eye"></i>
         </button>
         <label for="pwd">Password</label>
-
       </div>
-      <mat-error *ngIf="LoginForm.get('passwordFormControl')?.touched && LoginForm.get('passwordFormControl')?.invalid">
+      <mat-error
+        *ngIf="
+          LoginForm.get('passwordFormControl')?.touched &&
+          LoginForm.get('passwordFormControl')?.invalid
+        "
+      >
         * Enter Valid password
         <!-- Password should contain:
         At least 8 characters in length,
@@ -58,11 +67,13 @@
       </mat-error>
 
       <mat-error id="BackendResponse">
-        {{Status}}
+        {{ Status }}
       </mat-error>
 
       <div>
-        <button id="submit" [disabled]="LoginForm.invalid" (click)="Submit()">Submit</button>
+        <button id="submit" [disabled]="LoginForm.invalid" (click)="Submit()">
+          Submit
+        </button>
       </div>
     </form>
 
@@ -76,7 +87,6 @@
         </div>
         <hr />
       </div>
-
     </div>
   </div>
 </div>

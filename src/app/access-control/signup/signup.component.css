@@ -1,12 +1,23 @@
 #signup
 {
   background-image: url('../../../assets/carpool/Bg1.png'), linear-gradient(orange, orange);
-  height: 100%;
+  height: 600px;
+  overflow-y: scroll;
   padding-top: 100px;
   font-family: 'Open Sans', sans-serif;
   background-position: bottom right;
 
 
+}
+
+#signup::-webkit-scrollbar
+{
+  width:4px;
+}
+#signup::-webkit-scrollbar-thumb
+{
+  background-color: lightgrey;
+  border-radius: 2px;
 }
 mat-error
 {

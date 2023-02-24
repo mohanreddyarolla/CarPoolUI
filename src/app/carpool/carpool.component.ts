@@ -59,12 +59,11 @@ export class CarpoolComponent implements OnInit{
         break
 
       case ScreenType.SignUp:
+        this.OpenCarpoolHome= false
         this.OpenAccessControl = true
 
 
     }
-
-
 
   }
 

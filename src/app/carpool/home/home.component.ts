@@ -16,7 +16,7 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.UserName ="John"
+    this.UserName =this.service.user.UserName
   }
 
 

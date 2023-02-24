@@ -26,7 +26,7 @@ export class MyRidesComponent implements OnInit {
 
     this.service.CurrentScreen = ScreenType.MyRides
 
-    this.DataService.GetMyRides(this.service.CurrentUser).subscribe((data: any) => {
+    this.DataService.GetMyRides(this.service.user.UserId).subscribe((data: any) => {
       console.log(data);
       this.myRides = data;
       this.LoadBookedRides();

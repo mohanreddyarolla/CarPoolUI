@@ -13,6 +13,7 @@ import { CarpoolDataServiceService } from 'src/app/Service/carpool-data-service.
 import { Message } from 'src/app/Models/DataModels/Message';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MessageComponent } from 'src/app/carpool/message/message.component';
+import { User } from 'src/app/Models/User';
 
 @Component({
   selector: 'app-signup',
@@ -37,6 +38,8 @@ export class SignupComponent {
     this.PasswordMatched = true;
 
     this.SignUpForm = new FormGroup({
+
+      NameFormControl:new FormControl('',[Validators.required]),
 
       emailFormControl: new FormControl('', [
         Validators.required,
@@ -76,8 +79,18 @@ export class SignupComponent {
 
       if(data.Status)
       {
-        this.service.changeScreen(ScreenType.Home);
-        this.service.CurrentUser = data.UserId
+        this.service.user = new User()
+        this.service.user.UserId = data.UserId
+
+        this.DataService.GetUserName(data.UserId).subscribe((data:any)=>
+        {
+          this.service.user.UserName = data
+          this.service.changeScreen(ScreenType.Home);
+          this.service.ScreenChanged.next('')
+          // this.service.CurrentUser = data.UserId
+        })
+
+
       }
       else
       {
@@ -86,7 +99,7 @@ export class SignupComponent {
       }
       this.service.Message = data.StatusMessage
       this.snakBar.openFromComponent(MessageComponent,{
-        duration:800
+        duration:1000
       })
 
     });
@@ -94,16 +107,5 @@ export class SignupComponent {
 
   }
 
-  MathcPassword() {
-    console.log(
-      this.signUpRequest.Password,
-      this.conformPassword,
-      this.signUpRequest.Password == this.conformPassword
-    );
-    if (this.signUpRequest.Password == this.conformPassword) {
-      this.PasswordMatched = true;
-    } else {
-      this.PasswordMatched = false;
-    }
-  }
+
 }

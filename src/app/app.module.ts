@@ -24,11 +24,12 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MyRidesComponent } from './carpool/my-rides/my-rides.component';
 import { BookingCardComponent } from './carpool/ride-matching-card/booking-card/booking-card.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RideOfferCardComponent } from './carpool/ride-offering/ride-offer-card/ride-offer-card.component';
 import { MessageComponent } from './carpool/message/message.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProfileComponent } from './carpool/profile/profile.component';
+import { InterceptorInterceptor } from './Service/interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,9 @@ import { ProfileComponent } from './carpool/profile/profile.component';
     MatSnackBarModule,
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

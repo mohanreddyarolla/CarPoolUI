@@ -1,50 +1,45 @@
-#logo img
-{
+#logo img {
   height: 50px;
 }
-#logo
-{
-  padding-bottom:30px;
+
+#logo {
+  padding-bottom: 30px;
 }
 
-.OrangeMessage
-{
-  color:orange
-}
-.VioletMessage
-{
-  color:rgba(147,25,255,255);
+.OrangeMessage {
+  color: orange
 }
 
-h1
-{
+.VioletMessage {
+  color: rgba(147, 25, 255, 255);
+}
+
+h1 {
   font-style: italic;
   font-size: 80px;
   font-family: 'Tajawal', sans-serif;
   line-height: 70px;
   font-weight: bold;
 }
-#subMessage
-{
+
+#subMessage {
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 5px;
 }
-#introMessage
-{
-padding-bottom: 0px;
+
+#introMessage {
+  padding-bottom: 0px;
 }
 
-#convoImage img
-{
+#convoImage img {
   /* padding-top: 0px; */
   /* max-height: 300px; */
   width: 100%;
   padding-bottom: 110px;
 }
 
-#Intro
-{
+#Intro {
   padding: 30px 60px 0px 60px;
   /* background-image: url('../../assets/carpool/SignUpLogin.png'); */
   /* border:solid red; */

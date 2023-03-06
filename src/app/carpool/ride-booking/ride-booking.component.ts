@@ -12,49 +12,45 @@ import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
   templateUrl: './ride-booking.component.html',
   styleUrls: ['./ride-booking.component.css'],
 })
-export class RideBookingComponent implements OnInit{
+export class RideBookingComponent implements OnInit {
   MatchingRides!: MatchingRides[];
   OfferedRides!: OfferedRides[];
-  MatchFound!:boolean
+  MatchFound!: boolean;
 
   constructor(
     private service: CarpoolServiceService,
     private dataService: CarpoolDataServiceService
   ) {
-
-    this.MatchFound = true
+    this.MatchFound = true;
     service.ShowAvailableRides.subscribe(() => {
-      console.log("Getting Data")
+      console.log('Getting Data');
 
-      const  ride:RideData = new RideData
-      ride.Date = service.Form1Data.Date
-      ride.Time = service.Form1Data.Time
-      ride.FromLocationId = service.Form1Data.FromLocationId
-      ride.ToLocationId = service.Form1Data.ToLocationId
+      const ride: RideData = new RideData();
+      ride.Date = service.Form1Data.Date;
+      ride.Time = service.Form1Data.Time;
+      ride.FromLocationId = service.Form1Data.FromLocationId;
+      ride.ToLocationId = service.Form1Data.ToLocationId;
 
-      console.log(ride)
-      dataService.GetMatchingRides(ride).subscribe((data:any)=>
-      {
-        this.MatchingRides = data
+      console.log(ride);
+      dataService.GetMatchingRides(ride).subscribe((data: any) => {
+        this.MatchingRides = data;
 
-       // this.loadAvailableRides();
-       if(this.MatchingRides.length == 0)
-       {
-        this.MatchFound = false
-       }
-       else
-       {
-        this.MatchFound = true
-       }
-        console.log(data)
-      })
-
+        // this.loadAvailableRides();
+        if (this.MatchingRides.length == 0) {
+          this.MatchFound = false;
+        } else {
+          this.MatchFound = true;
+        }
+        console.log(data);
+      });
     });
   }
+
   ngOnInit(): void {
-    this.service.CurrentScreen = ScreenType.RideBooking
-    console.log('In Ride Booking')
+    this.service.CurrentScreen = ScreenType.RideBooking;
+    console.log('In Ride Booking');
   }
+
 
   // loadAvailableRides() {
   //   this.MatchingRides = [];
@@ -90,5 +86,4 @@ export class RideBookingComponent implements OnInit{
   //   if (locationName == 'undefined') return '';
   //   else return locationName?.toString();
   // }
-
 }

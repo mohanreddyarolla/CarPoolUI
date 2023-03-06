@@ -1,0 +1,94 @@
+#header {
+  display: flex;
+}
+
+#ProfileImage img {
+  height: 80px;
+  border-radius: 10px;
+}
+
+#UserName p {
+  margin-top: 20px;
+  /* color: rgba(147, 25, 255, 255); */
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#ProfileEdit input {
+  border: none;
+  background-color: white;
+  width: 300px;
+
+}
+
+#profile {
+  margin: 30px;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+i {
+  color: lightgray;
+  margin: 10px 10px;
+}
+
+.EditIcon {
+  color: grey;
+
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.input,
+.form {
+  /* border: solid; */
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width: fit-content;
+
+
+
+}
+
+.input {
+  border: solid 1px;
+  border-radius: 5px;
+
+}
+
+.form {
+  /* height:50px; */
+}
+
+.form label {
+  margin-top: 20px;
+  /* border: solid; */
+  width: 100px;
+}
+
+#footer {
+  /* display: flex; */
+  justify-content: space-around;
+  padding: 30px 20px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  margin: 0px 20px 0px 0px;
+  padding: 5px 20px;
+}
+
+#Save {
+  color: White;
+  font-weight: 500;
+  background-color: rgba(0, 128, 0, 0.489);
+}

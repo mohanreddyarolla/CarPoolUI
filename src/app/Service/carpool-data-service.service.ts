@@ -8,6 +8,7 @@ import { RideData } from '../Models/DataModels/RideData';
 import { CarpoolServiceService } from './carpool-service.service';
 import { RideBookingRequest } from '../Models/DataModels/RideBookingRequest';
 import { OfferRideRequest } from '../Models/DataModels/OfferRideRequest';
+import { UserData } from '../Models/DataModels/UserData';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,6 @@ export class CarpoolDataServiceService {
   readonly APIUrl = 'https://localhost:7297/api/CarPool'
 
   constructor(private http:HttpClient) { }
-
 
   getUsers():Observable<any>
   {
@@ -77,6 +77,16 @@ export class CarpoolDataServiceService {
   OfferARide(rideRequest:OfferRideRequest)
   {
     return this.http.post(this.APIUrl+'/OfferRide',rideRequest)
+  }
+
+  GetUserData(userId:number)
+  {
+    return this.http.get(this.APIUrl+'/Home/GetUserData/'+userId)
+  }
+
+  UpdateUserData(userData:UserData)
+  {
+    return this.http.post(this.APIUrl+'/Home/UpdateUserData/',userData)
   }
 
 }

@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
 import { ScreenType } from 'src/app/Models/Enums/ScreenType';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,7 +13,7 @@ export class NavBarComponent implements OnInit{
 
   UserName!:string
 
-  constructor(private service:CarpoolServiceService)
+  constructor(private service:CarpoolServiceService,private dialog:MatDialog)
   {
     this.UserName =this.service.user.UserName
   }
@@ -29,7 +31,7 @@ export class NavBarComponent implements OnInit{
 
   OpenProfile()
   {
-
+    this.dialog.open(ProfileComponent)
   }
 
   OpenMyRides()

@@ -2,18 +2,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormControl,
   Validators,
-  ReactiveFormsModule,
-  PatternValidator,
   FormGroup,
 } from '@angular/forms';
 import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
 import { ScreenType } from 'src/app/Models/Enums/ScreenType';
 import { SignUpRequest } from 'src/app/Models/SignUpRequest';
 import { CarpoolDataServiceService } from 'src/app/Service/carpool-data-service.service';
-import { Message } from 'src/app/Models/DataModels/Message';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MessageComponent } from 'src/app/carpool/message/message.component';
 import { User } from 'src/app/Models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -34,7 +32,8 @@ export class SignupComponent {
   constructor(
     private snakBar: MatSnackBar,
     private service: CarpoolServiceService,
-    private DataService: CarpoolDataServiceService
+    private DataService: CarpoolDataServiceService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -87,6 +86,7 @@ export class SignupComponent {
           this.service.user.UserName = data;
           this.service.changeScreen(ScreenType.Home);
           this.service.ScreenChanged.next('');
+          this.route.navigate(['/LogIn']);
           // this.service.CurrentUser = data.UserId
         });
       } else {

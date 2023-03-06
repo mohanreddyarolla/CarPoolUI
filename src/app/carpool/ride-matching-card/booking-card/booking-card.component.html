@@ -7,10 +7,8 @@
         <label>Route</label>
 
         <div *ngFor="let item of CardData.StopList" class="Location">
-
           <div class="LocationName">{{ item }}</div>
           <div><i class="fa-solid fa-circle" style="font-size: 6px"></i></div>
-
         </div>
       </div>
 
@@ -52,10 +50,16 @@
 
   <div id="Booking">
     <label for="RequiredSeats">Select Required Seats</label>
-    <input type="number" value="1" min="1" [max]=CardData.AvailableSeats step="1"#RequiredSeats />
+    <input
+      type="number"
+      value="1"
+      min="1"
+      [max]="CardData.AvailableSeats"
+      step="1"
+      #RequiredSeats
+    />
   </div>
 </div>
-
 
 <div mat-dialog-actions id="Footer">
   <button mat-button mat-dialog-close>Close</button>

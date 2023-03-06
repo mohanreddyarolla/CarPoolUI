@@ -20,7 +20,7 @@ export class BookingCardComponent implements OnInit {
     private snakBar: MatSnackBar,
     private service: CarpoolServiceService,
     private dataService: CarpoolDataServiceService,
-    private dialog:MatDialog
+    private dialog: MatDialog
   ) {}
   ngOnInit(): void {
     this.CardData = new BookingCard();
@@ -56,9 +56,8 @@ export class BookingCardComponent implements OnInit {
       console.log('status', data);
       console.log(rideBookingRequest);
       this.service.Message = data;
-      this.dialog.closeAll()
+      this.dialog.closeAll();
       this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
-
     });
   }
 }

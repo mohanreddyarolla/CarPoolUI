@@ -56,6 +56,10 @@ export class LoginComponent {
       console.log(data);
       if (data.Status) {
         this.service.Message = data.StatusMessage;
+        console.log(data)
+          console.log("Token :",data.Token)
+          localStorage.setItem("CarpoolApiToken",data.Token)
+
         this.snakBar.openFromComponent(MessageComponent, {
           duration: 1000,
         });
@@ -65,6 +69,7 @@ export class LoginComponent {
 
         this.DataService.GetUserName(data.UserId).subscribe((data: any) => {
           this.service.user.UserName = data;
+
           // this.service.CurrentUser = data.UserId;
           this.service.changeScreen(ScreenType.Home);
           this.service.ScreenChanged.next('');

@@ -1,25 +1,18 @@
 <div id="RideBooking">
-
   <div id="RideBookingForm">
-
     <app-form1></app-form1>
     <!-- <button>Submit</button> -->
-
   </div>
 
-  <div id = "Matches">
-
+  <div id="Matches">
     <p>Your Matches</p>
     <div id="NoMatchFound" [hidden]="MatchFound">
-      <i class="fa-regular fa-face-frown "></i>
+      <i class="fa-regular fa-face-frown"></i>
       <div>
         <p>No Ride found</p>
       </div>
     </div>
 
     <app-ride-matching-card [Rides]="MatchingRides"></app-ride-matching-card>
-
-
-
   </div>
 </div>

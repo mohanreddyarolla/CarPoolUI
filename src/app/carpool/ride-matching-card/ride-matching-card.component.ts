@@ -32,16 +32,16 @@ ngAfterViewInit(){
   }
 
   OpenDetails(availableRideID: any) {
-    if (this.service.CurrentScreen == ScreenType.RideBooking) {
-      this.service.SelectedRideIdToBook = availableRideID;
-      this.dataService
-        .GetOfferedRidesById(availableRideID)
-        .subscribe((data: any) => {
-          this.service.SelectedRideDetails = data;
+    // if (this.service.CurrentScreen == ScreenType.RideBooking) {
+    //   this.service.SelectedRideIdToBook = availableRideID;
+    //   this.dataService
+    //     .GetOfferedRidesById(availableRideID)
+    //     .subscribe((data: any) => {
+    //       this.service.SelectedRideDetails = data;
 
-          this.dialog.open(BookingCardComponent);
-          console.log(availableRideID);
-        });
-    }
+    //       this.dialog.open(BookingCardComponent);
+    //       console.log(availableRideID);
+    //     });
+    // }
   }
 }

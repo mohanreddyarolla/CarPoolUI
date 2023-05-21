@@ -45,33 +45,10 @@ export class RideOfferCardComponent implements OnInit {
   }
 
   OfferARide() {
-    var AllStops =
-      this.service.Form1Data.FromLocationId +
-      ',' +
-      this.service.Form2Data.StopList +
-      this.service.Form1Data.ToLocationId;
 
-    var offerRideRequest = new OfferRideRequest();
-
-    offerRideRequest.CurrentState = 'Active';
-    offerRideRequest.Date = this.service.Form1Data.Date;
-    offerRideRequest.Time = this.service.Form1Data.Time;
-    offerRideRequest.TotalPrice = this.service.Form2Data.Price;
-    offerRideRequest.TotalSeats = this.service.Form2Data.AvailabeSeats;
-    offerRideRequest.RideProviderId = this.service.user.UserId;
-    offerRideRequest.StopList = AllStops;
-
-    // this.service.Message='Sucessfull'
-    //   this.snakBar.openFromComponent(MessageComponent,{
-    //     duration: 500,
-    //   })
-
-    this.dataService.OfferARide(offerRideRequest).subscribe((data: any) => {
-      console.log(data);
-      this.service.Message = data;
-      this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
-      this.dialog.closeAll()
-    });
+    this.service.Message = "Ride offered Successfull";
+    this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
+    this.dialog.closeAll()
   }
 
   getLocationName(LocationId: number): any {

@@ -25,16 +25,16 @@ export class BookingCardComponent implements OnInit {
   ngOnInit(): void {
     this.CardData = new BookingCard();
 
-    this.dataService
-      .GetBookingCard(
-        this.service.SelectedRideDetails.OfferedRideId,
-        this.service.Form1Data.FromLocationId,
-        this.service.Form1Data.ToLocationId
-      )
-      .subscribe((data: any) => {
-        console.log('Boking Card: ', data);
-        this.CardData = data;
-      });
+    // this.dataService
+    //   .GetBookingCard(
+    //     this.service.SelectedRideDetails.OfferedRideId,
+    //     this.service.Form1Data.FromLocationId,
+    //     this.service.Form1Data.ToLocationId
+    //   )
+    //   .subscribe((data: any) => {
+    //     console.log('Boking Card: ', data);
+    //     this.CardData = data;
+    //   });
     // this.CardData.From = this.service.getLocationName( this.service.Form1Data.FromLocationId)
     // this.CardData.To = this.service.getLocationName(this.service.Form1Data.ToLocationId)
     // this.CardData.Date = this.service.SelectedRideDetails.Date
@@ -43,21 +43,11 @@ export class BookingCardComponent implements OnInit {
   }
 
   BookARide() {
-    var rideBookingRequest = new RideBookingRequest();
-
-    rideBookingRequest.AvailableRideId =
-      this.service.SelectedRideDetails.OfferedRideId;
-    rideBookingRequest.FromLocationId = this.service.Form1Data.FromLocationId;
-    rideBookingRequest.ToLocationId = this.service.Form1Data.ToLocationId;
-    rideBookingRequest.UserId = this.service.user.UserId;
-    rideBookingRequest.RequiredSeats = this.RequiredSeats.nativeElement.value;
-
-    this.dataService.BookARide(rideBookingRequest).subscribe((data: any) => {
-      console.log('status', data);
-      console.log(rideBookingRequest);
-      this.service.Message = data;
+    this.service.Message = "Booking conformed";
       this.dialog.closeAll();
       this.snakBar.openFromComponent(MessageComponent, { duration: 1000 });
-    });
+    var rideBookingRequest = new RideBookingRequest();
+
+
   }
 }

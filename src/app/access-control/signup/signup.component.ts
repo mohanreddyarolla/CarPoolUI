@@ -70,32 +70,7 @@ export class SignupComponent {
 
   Submit() {
     console.log(this.signUpRequest);
-    console.log(this.SignUpForm);
 
-    // this.DataService.getUsers().subscribe((data)=>
-    // {
-    //   console.log(data)
-    // });
-
-    this.DataService.SignUpUser(this.signUpRequest).subscribe((data: any) => {
-      if (data.Status) {
-        this.service.user = new User();
-        this.service.user.UserId = data.UserId;
-
-        this.DataService.GetUserName(data.UserId).subscribe((data: any) => {
-          this.service.user.UserName = data;
-          this.service.changeScreen(ScreenType.Home);
-          this.service.ScreenChanged.next('');
-          this.route.navigate(['/LogIn']);
-          // this.service.CurrentUser = data.UserId
-        });
-      } else {
-        this.Status = data.StatusMessage;
-      }
-      this.service.Message = data.StatusMessage;
-      this.snakBar.openFromComponent(MessageComponent, {
-        duration: 1000,
-      });
-    });
+    this.route.navigate(['/LogIn']);
   }
 }

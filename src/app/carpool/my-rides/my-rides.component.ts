@@ -25,17 +25,6 @@ export class MyRidesComponent implements OnInit {
   ngOnInit(): void {
 
     this.service.CurrentScreen = ScreenType.MyRides
-
-    this.DataService.GetMyRides(this.service.user.UserId).subscribe((data: any) => {
-      console.log(data);
-      this.myRides = data;
-      this.LoadBookedRides();
-      this.LoadOfferedRides();
-      // this.OfferedRides = this.myRides.OfferedRides
-      // this.BookedRides = this.myRides.BookedRides
-      console.log(this.BookedRides);
-      console.log(this.OfferedRides);
-    });
   }
 
   async LoadOfferedRides() {
@@ -51,10 +40,7 @@ export class MyRidesComponent implements OnInit {
       matchingRide.to = this.getLocationName(stoplist[stoplist.length - 1]);
       matchingRide.price = ride.TotalPrice;
       matchingRide.seatAvailability = ride.SeatsProvided;
-      this.DataService.GetUserName(ride.RideProviderId).subscribe((data: any) => {
-        matchingRide.name = data.toString();
-        console.log('UserName : ', matchingRide.name);
-      });
+
       // matchingRide.Name = this.getUserName(ride.RideProviderId)
 
       this.OfferedRides.push(matchingRide);
@@ -88,10 +74,7 @@ export class MyRidesComponent implements OnInit {
       matchingRide.price = ride.Price;
       matchingRide.seatAvailability = ride.ReservedSeats;
 
-      this.DataService.GetUserName(ride.RideProviderId).subscribe((data: any) => {
-        matchingRide.name = data.toString();
-        console.log('UserName : ', matchingRide.name);
-      });
+
 
       // matchingRide.Name = this.getUserName(ride.RideProviderId)
 

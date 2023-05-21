@@ -20,7 +20,7 @@ import { User } from '../Models/User';
 })
 export class CarpoolServiceService {
   Message: string = 'Message';
-  Locations!: Locations[];
+  Locations:Locations[] = new Array<Locations>;
   RideData!: RideData;
   Form1Data!: Form1;
   Form2Data!: Form2;
@@ -54,9 +54,15 @@ export class CarpoolServiceService {
   }
 
   GetAllAvailableLocations() {
-    this.dataService.GetLocations().subscribe((data: any) => {
-      this.Locations = data;
-    });
+
+
+    for(var i=1;i<=10;i++)
+    {
+      let location = new Locations();
+      location.LocationName = "A"+i.toString();
+      this.Locations.push(location);
+    }
+
   }
 
   getLocationName(LocationId: number): any {

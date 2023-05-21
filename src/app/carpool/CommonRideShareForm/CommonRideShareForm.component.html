@@ -54,15 +54,6 @@
 
           <hr />
         </div>
-        <div
-          class="error"
-          *ngIf="
-            form1.get('FromLocation')?.touched &&
-            form1.get('FromLocation')?.invalid
-          "
-        >
-          <p>* Select from location</p>
-        </div>
 
         <div class="form mb-3 mt-3">
           <label for="destination">To</label>
@@ -91,23 +82,7 @@
 
           <hr />
         </div>
-        <div
-          class="error"
-          *ngIf="
-            form1.get('ToLocation')?.touched && form1.get('ToLocation')?.invalid
-          "
-        >
-          <p>* Select Destination</p>
-        </div>
-        <div
-          class="error"
-          *ngIf="
-            form1.get('FromLocation')?.touched &&
-            form1.get('FromLocation')?.value == form1.get('ToLocation')?.value
-          "
-        >
-          <p>* Start location and end location cannot be same</p>
-        </div>
+
 
         <div class="form mb-3 mt-3" id="date">
           <label for="Date">Date</label>
@@ -122,12 +97,7 @@
           <hr />
         </div>
 
-        <div
-          class="error"
-          *ngIf="form1.get('Date')?.touched && form1.get('Date')?.invalid"
-        >
-          <p>* Enter correct Date.</p>
-        </div>
+
       </form>
     </div>
 
@@ -219,23 +189,14 @@
   <div id="Submit" *ngIf="CurrentScreen == ScreenType.RideBooking">
     <button
       (click)="Submit()"
-      [disabled]="
-        form1.invalid ||
-        form1.get('FromLocation')?.value == form1.get('ToLocation')?.value
-      "
+
     >
       Submit
     </button>
   </div>
 
   <div id="NextButton" *ngIf="CurrentScreen == ScreenType.RideOffering">
-    <button
-      (click)="OpenNextForm()"
-      [disabled]="
-        form1.invalid ||
-        form1.get('FromLocation')?.value == form1.get('ToLocation')?.value
-      "
-    >
+    <button (click)="OpenNextForm()" >
       Next <span><i class="fa-solid fa-angles-right fa-sm"></i></span>
     </button>
   </div>

@@ -13,7 +13,7 @@ import { CarpoolServiceService } from 'src/app/Service/carpool-service.service';
   styleUrls: ['./ride-booking.component.css'],
 })
 export class RideBookingComponent implements OnInit {
-  MatchingRides!: MatchingRides[];
+  MatchingRides: MatchingRides[] = new Array<MatchingRides>;
   OfferedRides!: OfferedRides[];
   MatchFound!: boolean;
   SubmitButtonClicked!:boolean
@@ -39,19 +39,17 @@ export class RideBookingComponent implements OnInit {
     ride.FromLocationId = this.service.Form1Data.FromLocationId;
     ride.ToLocationId = this.service.Form1Data.ToLocationId;
 
+    let match = new MatchingRides()
+    match.date = ride.Date
+    match.from="A1";
+    match.to="A2";
+    match.price=20
+    match.seatAvailability=5;
+
+    this.MatchingRides.push(match);
     console.log(ride);
-    this.dataService.GetMatchingRides(ride).subscribe((data: any) => {
-      this.MatchingRides = data;
-      this.SubmitButtonClicked = true;
-      console.log(this.MatchingRides,data,this.SubmitButtonClicked)
-      // this.loadAvailableRides();
-      if (this.MatchingRides.length == 0) {
-        this.MatchFound = false;
-      } else {
-        this.MatchFound = true;
-      }
-      console.log(data);
-    });
+    this.MatchFound = true;
+
 
   }
 

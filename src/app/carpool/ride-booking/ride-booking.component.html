@@ -1,10 +1,16 @@
 <div id="RideBooking">
   <div id="RideBookingForm">
-    <app-form1></app-form1>
+    <app-CommonRideShareForm></app-CommonRideShareForm>
     <!-- <button>Submit</button> -->
   </div>
 
-  <div id="Matches">
+  <div id="InitialMessage" *ngIf="!SubmitButtonClicked">
+
+    <p>Please enter Ride details to get Available rides to book!</p>
+
+  </div>
+
+  <div id="Matches" *ngIf="SubmitButtonClicked">
     <p>Your Matches</p>
     <div id="NoMatchFound" [hidden]="MatchFound">
       <i class="fa-regular fa-face-frown"></i>
@@ -13,6 +19,6 @@
       </div>
     </div>
 
-    <app-ride-matching-card [Rides]="MatchingRides"></app-ride-matching-card>
+    <app-ride-matching-card *ngIf="MatchFound && MatchingRides.length > 0" [Rides]="MatchingRides"></app-ride-matching-card>
   </div>
 </div>

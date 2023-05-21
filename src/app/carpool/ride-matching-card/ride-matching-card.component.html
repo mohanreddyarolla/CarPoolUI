@@ -1,9 +1,9 @@
 <div id="YourMatches">
-  <div id="MatchList" *ngFor="let ride of MatchingRides" let i="index">
-    <div class="MatchCard" (click)="OpenDetails(ride.RideID)">
+  <div id="MatchList" *ngFor="let ride of Rides" let i="index">
+    <div class="MatchCard" (click)="OpenDetails(ride.rideID)">
       <div id="header">
         <div>
-          <p>{{ ride.Name }}</p>
+          <p>{{ ride.name }}</p>
         </div>
         <div><img src="../../../../assets/carpool/profile-1.png" alt="" /></div>
       </div>
@@ -12,17 +12,17 @@
         <div>
           <div id="from">
             <p class="Label">From</p>
-            <p class="RideData">{{ ride.From }}</p>
+            <p class="RideData">{{ ride.from }}</p>
           </div>
 
           <div id="from">
             <p class="Label">Date</p>
-            <p class="RideData">{{ ride.Date }}</p>
+            <p class="RideData">{{ ride.date }}</p>
           </div>
 
           <div id="from">
             <p class="Label">Price</p>
-            <p class="RideData">{{ ride.Price }}</p>
+            <p class="RideData">{{ ride.price }}</p>
           </div>
         </div>
 
@@ -47,17 +47,17 @@
         <div>
           <div id="from">
             <p class="Label">To</p>
-            <p class="RideData">{{ ride.To }}</p>
+            <p class="RideData">{{ ride.to }}</p>
           </div>
 
           <div id="from">
             <p class="Label">Time</p>
-            <p class="RideData">{{ ride.Time }}</p>
+            <p class="RideData">{{ ride.time }}</p>
           </div>
 
           <div id="from">
             <p class="Label">Seat Avilability</p>
-            <p class="RideData">{{ ride.SeatAvailability }}</p>
+            <p class="RideData">{{ ride.seatAvailability }}</p>
           </div>
         </div>
       </div>

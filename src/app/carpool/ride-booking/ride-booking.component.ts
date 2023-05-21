@@ -16,6 +16,7 @@ export class RideBookingComponent implements OnInit {
   MatchingRides!: MatchingRides[];
   OfferedRides!: OfferedRides[];
   MatchFound!: boolean;
+  SubmitButtonClicked!:boolean
 
   constructor(
     private service: CarpoolServiceService,
@@ -23,30 +24,39 @@ export class RideBookingComponent implements OnInit {
   ) {
     this.MatchFound = true;
     service.ShowAvailableRides.subscribe(() => {
-      console.log('Getting Data');
 
-      const ride: RideData = new RideData();
-      ride.Date = service.Form1Data.Date;
-      ride.Time = service.Form1Data.Time;
-      ride.FromLocationId = service.Form1Data.FromLocationId;
-      ride.ToLocationId = service.Form1Data.ToLocationId;
-
-      console.log(ride);
-      dataService.GetMatchingRides(ride).subscribe((data: any) => {
-        this.MatchingRides = data;
-
-        // this.loadAvailableRides();
-        if (this.MatchingRides.length == 0) {
-          this.MatchFound = false;
-        } else {
-          this.MatchFound = true;
-        }
-        console.log(data);
-      });
+     this.LoadAvailableRides()
     });
   }
 
+  LoadAvailableRides()
+  {
+    console.log('Getting Data');
+
+    const ride: RideData = new RideData();
+    ride.Date = this.service.Form1Data.Date;
+    ride.Time = this.service.Form1Data.Time;
+    ride.FromLocationId = this.service.Form1Data.FromLocationId;
+    ride.ToLocationId = this.service.Form1Data.ToLocationId;
+
+    console.log(ride);
+    this.dataService.GetMatchingRides(ride).subscribe((data: any) => {
+      this.MatchingRides = data;
+      this.SubmitButtonClicked = true;
+      console.log(this.MatchingRides,data,this.SubmitButtonClicked)
+      // this.loadAvailableRides();
+      if (this.MatchingRides.length == 0) {
+        this.MatchFound = false;
+      } else {
+        this.MatchFound = true;
+      }
+      console.log(data);
+    });
+
+  }
+
   ngOnInit(): void {
+    this.SubmitButtonClicked = false;
     this.service.CurrentScreen = ScreenType.RideBooking;
     console.log('In Ride Booking');
   }

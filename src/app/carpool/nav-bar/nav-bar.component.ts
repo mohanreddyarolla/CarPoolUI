@@ -42,8 +42,10 @@ export class NavBarComponent implements OnInit{
 
   Logout()
   {
+    localStorage.setItem('CarpoolApiToken','NULL')
     this.service.changeScreen(ScreenType.LogIn)
     this.service.ScreenChanged.next('')
+
 
   }
 }

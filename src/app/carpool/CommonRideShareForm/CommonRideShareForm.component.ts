@@ -13,16 +13,16 @@ import {
   FormControl,
   FormGroup,
   Validators,
-  ReactiveFormsModule,
+
 } from '@angular/forms';
 import { Form1 } from 'src/app/Models/Form1';
 
 @Component({
-  selector: 'app-form1',
-  templateUrl: './form1.component.html',
-  styleUrls: ['./form1.component.css'],
+  selector: 'app-CommonRideShareForm',
+  templateUrl: './CommonRideShareForm.component.html',
+  styleUrls: ['./CommonRideShareForm.component.css'],
 })
-export class Form1Component implements OnInit {
+export class CommonRideShareFormComponent implements OnInit {
   LocationsList!: Locations[];
   form1!: FormGroup;
   SelectedTime = '5am - 9am';
@@ -57,9 +57,9 @@ export class Form1Component implements OnInit {
       ToLocation: new FormControl('', [Validators.required]),
       Date: new FormControl('', [
         Validators.required,
-        Validators.pattern(
-          '^(((0[1-9]|[12][0-9]|30)[/]?(0[13-9]|1[012])|31[/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[/]?02)[/]?[0-9]{4}|29[/]?02[/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$'
-        ),
+        // Validators.pattern(
+        //   '^(((0[1-9]|[12][0-9]|30)[/]?(0[13-9]|1[012])|31[/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[/]?02)[/]?[0-9]{4}|29[/]?02[/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$'
+        // ),
       ]),
     });
   }
@@ -80,8 +80,12 @@ export class Form1Component implements OnInit {
     this.service.Form1Data.FromLocationId =
       this.form1.get('FromLocation')?.value;
     this.service.Form1Data.ToLocationId = this.form1.get('ToLocation')?.value;
-    this.service.Form1Data.Date = this.form1.get('Date')?.value;
+    //this.service.Form1Data.Date = this.form1.get('Date')?.value;
     this.service.Form1Data.Time = this.SelectedTime;
+
+    let dt = new Date(this.form1.get('Date')?.value)
+    this.service.Form1Data.Date = this.service.formatDate(dt.getDate(),dt.getMonth()+1,dt.getFullYear())
+   console.log("Date : ",dt.getDate(),dt.getMonth(),dt.getFullYear())
   }
 
   OpenNextForm() {

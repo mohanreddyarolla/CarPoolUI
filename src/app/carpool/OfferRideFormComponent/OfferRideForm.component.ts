@@ -7,11 +7,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { RideOfferCardComponent } from '../ride-offering/ride-offer-card/ride-offer-card.component';
 
 @Component({
-  selector: 'app-form2',
-  templateUrl: './form2.component.html',
-  styleUrls: ['./form2.component.css']
+  selector: 'app-OfferRideForm',
+  templateUrl: './OfferRideForm.component.html',
+  styleUrls: ['./OfferRideForm.component.css']
 })
-export class Form2Component implements OnInit{
+export class OfferRideFormComponent implements OnInit{
 
   @ViewChild('Form2') form2Ref!:ElementRef
 
@@ -28,6 +28,7 @@ export class Form2Component implements OnInit{
   Price = '0'
 
 
+  formGroup!:FormGroup
 
   constructor(private service:CarpoolServiceService,private dialog:MatDialog){
 
@@ -45,9 +46,9 @@ export class Form2Component implements OnInit{
    this.SelectionError = true
    this.InvalidPrice = true
 
-  //  this.formGroup = new FormGroup({
-  //   Location:new FormControl('',[Validators.required])
-  //  })
+   this.formGroup = new FormGroup({
+    Location:new FormControl('',[Validators.required])
+   })
 
   }
 
@@ -103,6 +104,13 @@ export class Form2Component implements OnInit{
     {
       this.InvalidPrice = false
     }
+  }
+
+  optionSelected(indx:any)
+  {
+    if(indx == this.NumberOfStops)
+      this.SelectionError = true;
+
   }
 
 

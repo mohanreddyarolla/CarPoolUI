@@ -68,6 +68,7 @@ export class LoginComponent {
         this.service.user.UserId = data.UserId;
 
         this.DataService.GetUserName(data.UserId).subscribe((data: any) => {
+          console.log(data)
           this.service.user.UserName = data;
 
           // this.service.CurrentUser = data.UserId;

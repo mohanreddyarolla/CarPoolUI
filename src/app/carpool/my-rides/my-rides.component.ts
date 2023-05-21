@@ -38,22 +38,22 @@ export class MyRidesComponent implements OnInit {
     });
   }
 
-  LoadOfferedRides() {
+  async LoadOfferedRides() {
     this.OfferedRides = [];
-    this.myRides.OfferedRides.forEach((ride) => {
+    await this.myRides.OfferedRides.forEach((ride) => {
       const matchingRide = new MatchingRides();
       const stoplist = this.ParseStopList(ride.StopList);
 
-      matchingRide.RideID = ride.OfferedRideId;
-      matchingRide.Date = ride.Date;
-      matchingRide.Time = ride.Time;
-      matchingRide.From = this.getLocationName(stoplist[0]);
-      matchingRide.To = this.getLocationName(stoplist[stoplist.length - 1]);
-      matchingRide.Price = ride.TotalPrice;
-      matchingRide.SeatAvailability = ride.SeatsProvided;
+      matchingRide.rideID = ride.OfferedRideId;
+      matchingRide.date = ride.Date;
+      matchingRide.time = ride.Time;
+      matchingRide.from = this.getLocationName(stoplist[0]);
+      matchingRide.to = this.getLocationName(stoplist[stoplist.length - 1]);
+      matchingRide.price = ride.TotalPrice;
+      matchingRide.seatAvailability = ride.SeatsProvided;
       this.DataService.GetUserName(ride.RideProviderId).subscribe((data: any) => {
-        matchingRide.Name = data.toString();
-        console.log('UserName : ', matchingRide.Name);
+        matchingRide.name = data.toString();
+        console.log('UserName : ', matchingRide.name);
       });
       // matchingRide.Name = this.getUserName(ride.RideProviderId)
 
@@ -74,23 +74,23 @@ export class MyRidesComponent implements OnInit {
 
   // }
 
-  LoadBookedRides() {
+  async LoadBookedRides() {
     this.BookedRides = [];
 
-    this.myRides.BookedRides.forEach((ride) => {
+    await this.myRides.BookedRides.forEach((ride) => {
       const matchingRide = new MatchingRides();
 
-      matchingRide.RideID = ride.BookedRideId;
-      matchingRide.Date = ride.Date;
-      matchingRide.Time = ride.Time;
-      matchingRide.From = this.getLocationName(ride.StartPointId);
-      matchingRide.To = this.getLocationName(ride.StopPointId);
-      matchingRide.Price = ride.Price;
-      matchingRide.SeatAvailability = ride.ReservedSeats;
+      matchingRide.rideID = ride.BookedRideId;
+      matchingRide.date = ride.Date;
+      matchingRide.time = ride.Time;
+      matchingRide.from = this.getLocationName(ride.StartPointId);
+      matchingRide.to = this.getLocationName(ride.StopPointId);
+      matchingRide.price = ride.Price;
+      matchingRide.seatAvailability = ride.ReservedSeats;
 
       this.DataService.GetUserName(ride.RideProviderId).subscribe((data: any) => {
-        matchingRide.Name = data.toString();
-        console.log('UserName : ', matchingRide.Name);
+        matchingRide.name = data.toString();
+        console.log('UserName : ', matchingRide.name);
       });
 
       // matchingRide.Name = this.getUserName(ride.RideProviderId)

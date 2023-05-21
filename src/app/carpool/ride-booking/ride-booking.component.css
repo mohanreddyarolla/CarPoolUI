@@ -70,3 +70,12 @@ button
   margin-top: 20px;
 
 }
+#InitialMessage
+{
+  margin: 20px auto;
+}
+#InitialMessage p
+{
+  font-size: 15px;
+  color: grey;
+}

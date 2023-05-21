@@ -12,14 +12,24 @@ import { BookingCardComponent } from './booking-card/booking-card.component';
   styleUrls: ['./ride-matching-card.component.css'],
 })
 export class RideMatchingCardComponent implements OnInit {
-  @Input('Rides') MatchingRides!: MatchingRides[];
+  @Input() Rides!: MatchingRides[];
+  allMatchingRides!: MatchingRides[];
+  name:string = 'john'
 
   constructor(
     public dialog: MatDialog,
     private service: CarpoolServiceService,
     private dataService: CarpoolDataServiceService
   ) {}
-  ngOnInit(): void {}
+ngAfterViewInit(){
+
+}
+
+  ngOnInit(): void {
+    this.allMatchingRides = this.Rides;
+    // console.log('MatchingRides : ',this.Rides)
+    // this.name=this.Rides[0].Name;
+  }
 
   OpenDetails(availableRideID: any) {
     if (this.service.CurrentScreen == ScreenType.RideBooking) {

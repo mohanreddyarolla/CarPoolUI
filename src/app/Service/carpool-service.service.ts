@@ -67,4 +67,25 @@ export class CarpoolServiceService {
     if (locationName == 'undefined') return '';
     else return locationName?.toString();
   }
+
+  formatDate(day:number,month:number,year:any)
+  {
+    var d:string
+    if(day < 10)
+      d = '0'+day.toString()
+    else
+      d = day.toString()
+
+    var m:string
+    if(month < 10)
+      m = '0'+month.toString()
+    else
+      m = month.toString()
+
+
+    console.log(d+'/'+m+'/'+year)
+    return d+'/'+m+'/'+year
+
+
+  }
 }

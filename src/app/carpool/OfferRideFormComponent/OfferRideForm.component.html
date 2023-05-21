@@ -28,11 +28,12 @@
                     placeholder=""
                     name="Stop1"
                   /> -->
-                  <select   class="form-select" aria-label="Default select example" [value]="i" ngModel [name]="'Stop'+(i+1)">
+                  <select   class="form-select" aria-label="Default select example" [value]="i" ngModel [name]="'Stop'+(i+1)" (change)="optionSelected(i+1)">
                     <option *ngFor="let location of LocationsList" [value]="location.LocationId" >{{location.LocationName}}</option>
                   </select>
                 </div>
                 <div>
+
                   <button id="AddButton" (click)="AddStop(form2Ref.value)" [hidden]='AddButtonsHiddenList[i]'>
                     <i class="fa-solid fa-plus"></i>
                   </button>

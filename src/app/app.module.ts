@@ -16,8 +16,8 @@ import { HomeComponent } from './carpool/home/home.component';
 import { NavBarComponent } from './carpool/nav-bar/nav-bar.component';
 import {MatSelectModule} from '@angular/material/select';
 import { RideBookingComponent } from './carpool/ride-booking/ride-booking.component';
-import { Form1Component } from './carpool/form1/form1.component';
-import { Form2Component } from './carpool/form2/form2.component';
+import { CommonRideShareFormComponent } from './carpool/CommonRideShareForm/CommonRideShareForm.component';
+import { OfferRideFormComponent } from './carpool/OfferRideFormComponent/OfferRideForm.component';
 import { RideMatchingCardComponent } from './carpool/ride-matching-card/ride-matching-card.component';
 import { RideOfferingComponent } from './carpool/ride-offering/ride-offering.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -42,8 +42,8 @@ import { InterceptorInterceptor } from './Service/interceptor.interceptor';
     HomeComponent,
     NavBarComponent,
     RideBookingComponent,
-    Form1Component,
-    Form2Component,
+    CommonRideShareFormComponent,
+    OfferRideFormComponent,
     RideMatchingCardComponent,
     RideOfferingComponent,
     MyRidesComponent,
